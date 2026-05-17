@@ -63,7 +63,21 @@ body {
     gap: 4rem;
 }
 
-/* Typography */
+/* Typography & Title */
+.title-section {
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.main-title {
+    font-family: var(--font-text);
+    font-size: 3.5rem;
+    font-weight: 500;
+    color: var(--text-main);
+    letter-spacing: 1px;
+}
+
 .text-section {
     width: 35%;
     padding: 1rem 0;
@@ -225,6 +239,26 @@ body {
     }
 }
 
+.floating-heart {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    pointer-events: none; /* Let clicks pass through */
+    z-index: 9999;
+    animation: floatUp 1.5s ease-out forwards;
+}
+
+@keyframes floatUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(0.8);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px) scale(1.5);
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 900px) {
     body {
@@ -234,6 +268,11 @@ body {
     .main-card {
         padding: 2.5rem;
         border-radius: 30px;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
     }
 
     .card-content {

@@ -120,4 +120,29 @@ document.addEventListener('DOMContentLoaded', () => {
             iconUnmute.style.display = 'none';
         }
     });
+
+    // --- 4. Floating Heart Effect ---
+    document.addEventListener('click', (e) => {
+        // Prevent heart on interactive elements
+        const isInteractive = e.target.closest('button') || 
+                              e.target.closest('.carousel-section') ||
+                              ['A', 'INPUT', 'TEXTAREA', 'SELECT', 'VIDEO', 'IMG'].includes(e.target.tagName);
+        
+        if (isInteractive) return;
+
+        const heart = document.createElement('img');
+        heart.src = 'assets/Corazon_png_vector.png';
+        heart.classList.add('floating-heart');
+        
+        // Position at click (centered roughly for a 40x40 image)
+        heart.style.left = `${e.clientX - 20}px`;
+        heart.style.top = `${e.clientY - 20}px`;
+        
+        document.body.appendChild(heart);
+        
+        // Remove after animation (1500ms)
+        setTimeout(() => {
+            heart.remove();
+        }, 1500);
+    });
 });
