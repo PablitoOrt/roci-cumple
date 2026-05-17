@@ -1,14 +1,14 @@
 :root {
     /* Colors */
-    --bg-page: #fdfbf7;
-    --card-bg: #ffffff;
-    --text-main: #4a403a;
-    --text-light: #8c7e75;
+    --bg-page: #f9f6f0;
+    --card-bg: rgba(255, 255, 255, 0.85); /* Glassmorphism base */
+    --text-main: #3d332d;
+    --text-light: #7a6e65;
     --accent-pink: #f2a6a6;
     
     /* Fonts */
     --font-text: 'Cormorant Garamond', serif;
-    --font-ui: 'Montserrat', sans-serif;
+    --font-ui: 'Playfair Display', serif; /* Changed to more elegant font */
 }
 
 * {
@@ -18,7 +18,7 @@
 }
 
 body {
-    background-color: var(--bg-page);
+    background: linear-gradient(135deg, #f9f6f0 0%, #ede6db 100%);
     color: var(--text-main);
     font-family: var(--font-text);
     overflow-x: hidden;
@@ -27,7 +27,38 @@ body {
     justify-content: center;
     align-items: center;
     padding: 2rem;
+    position: relative;
 }
+
+/* Cinematic Background Elements */
+.bg-glow {
+    position: fixed;
+    border-radius: 50%;
+    /* Removed heavy filter blur for performance */
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: -2;
+    animation: glowPulse 15s infinite alternate ease-in-out;
+}
+
+.glow-1 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(230, 200, 180, 0.6) 0%, transparent 70%);
+    top: -10%;
+    left: -10%;
+}
+
+.glow-2 {
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(240, 215, 195, 0.5) 0%, transparent 70%);
+    bottom: -20%;
+    right: -10%;
+    animation-delay: -5s;
+}
+
+/* Removed .bg-noise entirely to significantly improve rendering performance */
 
 /* Layout Wrapper */
 .wrapper {
@@ -41,18 +72,20 @@ body {
 
 /* Main Card */
 .main-card {
-    background: var(--card-bg);
+    background: rgba(255, 255, 255, 0.92); /* Increased opacity slightly to compensate for blur removal */
+    /* Removed backdrop-filter for massive performance gain on mobile */
     border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
     width: 100%;
     height: 100%;
     min-height: 80vh;
     padding: 4rem 5rem;
-    box-shadow: 0 30px 80px rgba(74, 64, 58, 0.06);
+    box-shadow: 0 40px 100px rgba(110, 95, 85, 0.15), inset 0 0 0 1px rgba(255,255,255,0.8);
     display: flex;
     flex-direction: column;
     position: relative;
-    overflow: hidden;
-    animation: fadeInUp 1s ease-out forwards;
+    overflow: visible; /* Changed from hidden to allow shadows and hover effects */
+    animation: fadeInUp 1.5s ease-out forwards, floatCard 12s infinite ease-in-out;
 }
 
 .card-content {
@@ -65,41 +98,93 @@ body {
 
 /* Typography & Title */
 .title-section {
-    text-align: center;
+    text-align: left;
     margin-bottom: 2rem;
-    width: 100%;
+}
+
+.subtitle {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
 }
 
 .main-title {
-    font-family: var(--font-text);
-    font-size: 3.5rem;
-    font-weight: 500;
+    font-family: var(--font-ui);
+    font-size: 3.2rem;
+    font-weight: 400;
+    font-style: normal;
     color: var(--text-main);
-    letter-spacing: 1px;
+    letter-spacing: 0px;
+    line-height: 1.1;
+    text-shadow: none;
+}
+
+.cursive-text {
+    font-family: 'Alex Brush', cursive;
+    font-size: 4.5rem;
+    color: #c0907e; /* matches the heart and image aesthetic */
+    line-height: 0.7;
+    display: inline-block;
+    margin-top: -0.2rem;
+    padding-left: 1rem;
+    text-transform: lowercase;
+}
+
+.title-separator {
+    font-size: 1.2rem;
+    color: #c0907e;
+    margin-top: 1.5rem;
+    text-align: center;
+    opacity: 0.8;
 }
 
 .text-section {
     width: 35%;
-    padding: 1rem 0;
+    padding: 0;
 }
 
 .static-text p {
-    font-size: 1.6rem;
-    line-height: 1.6;
-    color: var(--text-main);
-    font-weight: 400;
-    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 1.7;
+    margin-bottom: 1.8rem;
 }
+
+.static-text p strong {
+    font-weight: 600;
+    color: #4a3025; /* Slightly darker to pop */
+}
+
+/* Poetic colors for each paragraph */
+.poetic-1 { color: #5a453d; }
+.poetic-2 { color: #8a5a4a; }
+.poetic-3 { color: #6a4a3a; }
+.poetic-4 { color: #946153; }
+.poetic-5 { color: #6b4c41; }
+.poetic-6 { color: #7a4b3a; }
 
 /* Carousel Section */
 .carousel-section {
     width: 60%;
     height: 70vh;
     position: relative;
-    border-radius: 20px;
+    border-radius: 4px; /* Less rounded for polaroid look */
+    padding: 1.5rem 1.5rem 4rem 1.5rem; /* Polaroid white border */
+    background: #ffffff;
+    box-shadow: 0 20px 50px rgba(90, 75, 65, 0.2), 0 0 0 1px rgba(0,0,0,0.03);
+    transform: rotate(-1.5deg);
+    z-index: 10;
+}
+
+/* Inner container for the actual slides so they don't overflow the polaroid padding */
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
-    box-shadow: 0 15px 40px rgba(74, 64, 58, 0.1);
-    background: #111; /* Dark background so uncropped photos look cinematic */
+    background: #f0f0f0;
 }
 
 .slide {
@@ -124,7 +209,7 @@ body {
 .slide video {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Prevents cropping */
+    object-fit: cover; /* Prevents bars, feels like a real polaroid photo */
     display: block;
 }
 
@@ -180,12 +265,24 @@ body {
     display: flex;
     gap: 1.5rem;
     font-family: var(--font-ui);
+    align-items: center;
 }
 
 .time-block {
     display: flex;
     align-items: baseline;
     gap: 0.4rem;
+    position: relative;
+}
+
+.time-block:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -0.75rem;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background: rgba(140, 126, 117, 0.3);
 }
 
 .time-block span:first-child {
@@ -229,14 +326,23 @@ body {
 
 /* Animations */
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glowPulse {
+    0% { transform: scale(1); opacity: 0.3; }
+    100% { transform: scale(1.1); opacity: 0.6; }
+}
+
+@keyframes floatCard {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes fadeText {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .floating-heart {
@@ -294,7 +400,9 @@ body {
     }
 
     .carousel-section {
-        order: -1; /* Carousel on top in mobile */
+        height: 50vh;
+        padding: 1rem 1rem 3.5rem 1rem; /* slightly smaller polaroid border on mobile */
+        /* Removed order: -1 so title appears correctly above on mobile */
     }
 
     .counter-section {
@@ -306,5 +414,9 @@ body {
     .live-counter {
         flex-wrap: wrap;
         gap: 1rem;
+    }
+
+    .time-block:not(:last-child)::after {
+        display: none; /* Hide separators on mobile as they wrap */
     }
 }

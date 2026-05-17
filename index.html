@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,54 +9,83 @@
     <!-- Google Fonts for Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@200;300;400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Alex+Brush&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
+    <!-- Cinematic Background Elements -->
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
+    <!-- Removed bg-noise for performance -->
+
     <div class="wrapper">
         <main class="main-card">
-            <!-- Title Section -->
-            <div class="title-section">
-                <h1 class="main-title">feliz cumple mi roci</h1>
-            </div>
+
 
             <div class="card-content">
                 <!-- Romantic Text (Left) -->
                 <div class="text-section" id="text-section">
+                    <!-- Title Section -->
+                    <div class="title-section">
+                        <div class="subtitle">PARA VOS</div>
+                        <h1 class="main-title">feliz cumpleaños,<br><span class="cursive-text">mi roci</span></h1>
+                        <div class="title-separator">&#10084;</div>
+                    </div>
                     <div class="static-text">
-                        <p>Para mi persona favorita en el mundo:</p>
-                        <p>Gracias por existir en mi vida.</p>
-                        <p>A veces siento que conocerte no fue realmente conocerte, sino reencontrarme con alguien que mi alma ya extrañaba desde hace mucho tiempo.</p>
-                        <p>Creo que en otra vida también te amé.</p>
-                        <p>Y quizás en todas las que vengan después vuelva a hacerlo, porque hay algo en vos que se siente eterno, como si el universo hubiera encontrado la manera de devolverme un lugar al que siempre pertenecí.</p>
-                        <p>Y aunque las palabras nunca alcancen para explicar lo que significás para mí, espero que al menos puedan acercarse un poco a todo lo que mi corazón siente cuando piensa en vos.</p>
+                        <p class="poetic-1"><strong>Para mi persona favorita</strong> en el mundo:</p>
+                        <p class="poetic-2"><strong>Gracias</strong> por existir en mi vida.</p>
+                        <p class="poetic-3">A veces siento que <strong>conocerte</strong> no fue realmente conocerte,
+                            sino <strong>reencontrarme</strong> con alguien que mi alma ya <strong>extrañaba</strong>
+                            desde hace mucho tiempo.</p>
+                        <p class="poetic-4">Creo que en <strong>otra vida</strong> también te amé.</p>
+                        <p class="poetic-5">Y quizás en todas las que vengan después <strong>vuelva a hacerlo</strong>,
+                            porque hay algo en vos que se siente <strong>eterno</strong>, como si el universo hubiera
+                            encontrado la manera de devolverme un lugar al que siempre pertenecí.</p>
+                        <p class="poetic-6">Y aunque las palabras nunca alcancen para explicar lo que <strong>significás
+                                para mí</strong>, espero que al menos puedan acercarse un poco a todo lo que mi
+                            <strong>corazón siente</strong> cuando piensa en vos.</p>
                     </div>
                 </div>
 
                 <!-- Media Carousel (Right) -->
                 <div class="carousel-section" id="carousel">
-                    <!-- Carousel Controls -->
-                    <button class="carousel-btn prev-btn" id="prev-btn" aria-label="Anterior">&#10094;</button>
-                    <button class="carousel-btn next-btn" id="next-btn" aria-label="Siguiente">&#10095;</button>
-                    <!-- Photos -->
-                    <div class="slide active"><img src="assets/WhatsApp Image 2026-05-16 at 17.08.22.jpeg" alt="Memory"></div>
-                    <div class="slide"><img src="assets/WhatsApp Image 2026-05-16 at 17.08.23 (1).jpeg" alt="Memory"></div>
-                    <div class="slide"><img src="assets/WhatsApp Image 2026-05-16 at 17.08.23 (2).jpeg" alt="Memory"></div>
-                    <div class="slide"><img src="assets/WhatsApp Image 2026-05-16 at 17.08.23 (3).jpeg" alt="Memory"></div>
-                    <div class="slide"><img src="assets/WhatsApp Image 2026-05-16 at 17.08.23.jpeg" alt="Memory"></div>
-                    <div class="slide"><img src="assets/WhatsApp Image 2026-05-16 at 17.08.24 (1).jpeg" alt="Memory"></div>
-                    <div class="slide"><img src="assets/WhatsApp Image 2026-05-16 at 17.08.24 (2).jpeg" alt="Memory"></div>
-                    <div class="slide"><img src="assets/WhatsApp Image 2026-05-16 at 17.08.24.jpeg" alt="Memory"></div>
-                    <div class="slide"><img src="assets/hamburs.jpeg" alt="Memory"></div>
-                    
-                    <!-- Videos -->
-                    <div class="slide"><video src="assets/WhatsApp Video 2026-05-16 at 17.08.23.mp4" loop playsinline controls></video></div>
-                    <div class="slide"><video src="assets/WhatsApp Video 2026-05-16 at 17.08.24.mp4" loop playsinline controls></video></div>
+                    <div class="carousel-inner">
+                        <!-- Carousel Controls -->
+                        <button class="carousel-btn prev-btn" id="prev-btn" aria-label="Anterior">&#10094;</button>
+                        <button class="carousel-btn next-btn" id="next-btn" aria-label="Siguiente">&#10095;</button>
+                        <!-- Photos -->
+                        <div class="slide active"><img src="assets/WhatsApp Image 2026-05-16 at 17.08.22.jpeg"
+                                alt="Memory"></div>
+                        <div class="slide"><img src="assets/WhatsApp Image 2026-05-16 at 17.08.23 (1).jpeg"
+                                alt="Memory"></div>
+                        <div class="slide"><img src="assets/WhatsApp Image 2026-05-16 at 17.08.23 (2).jpeg"
+                                alt="Memory"></div>
+                        <div class="slide"><img src="assets/WhatsApp Image 2026-05-16 at 17.08.23 (3).jpeg"
+                                alt="Memory"></div>
+                        <div class="slide"><img src="assets/WhatsApp Image 2026-05-16 at 17.08.23.jpeg" alt="Memory">
+                        </div>
+                        <div class="slide"><img src="assets/WhatsApp Image 2026-05-16 at 17.08.24 (1).jpeg"
+                                alt="Memory"></div>
+                        <div class="slide"><img src="assets/WhatsApp Image 2026-05-16 at 17.08.24 (2).jpeg"
+                                alt="Memory"></div>
+                        <div class="slide"><img src="assets/WhatsApp Image 2026-05-16 at 17.08.24.jpeg" alt="Memory">
+                        </div>
+                        <div class="slide"><img src="assets/hamburs.jpeg" alt="Memory"></div>
+
+                        <!-- Videos -->
+                        <div class="slide"><video src="assets/WhatsApp Video 2026-05-16 at 17.08.23.mp4" loop
+                                playsinline controls></video></div>
+                        <div class="slide"><video src="assets/WhatsApp Video 2026-05-16 at 17.08.24.mp4" loop
+                                playsinline controls></video></div>
+                    </div>
                 </div>
             </div>
 
             <!-- Live Counter (Bottom) -->
             <div class="counter-section">
-                <div class="counter-label">Mi amor por Vos empezó hace...</div>
+                <div class="counter-label">Desde que nuestras vidas se cruzaron...</div>
                 <div id="live-counter" class="live-counter">
                     <div class="time-block"><span id="c-days">000</span><span class="time-label">días</span></div>
                     <div class="time-block"><span id="c-hours">00</span><span class="time-label">horas</span></div>
@@ -68,8 +98,17 @@
 
     <!-- Audio Player -->
     <button id="audio-btn" class="audio-btn" aria-label="Toggle music">
-        <svg id="icon-unmute" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
-        <svg id="icon-mute" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+        <svg id="icon-unmute" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+            fill="none" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        </svg>
+        <svg id="icon-mute" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+            fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+        </svg>
     </button>
     <audio id="bg-music" loop>
         <source src="assets/Miguel - Sure Thing (Official Video) (128kbit_AAC).m4a" type="audio/mp4">
@@ -77,4 +116,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
